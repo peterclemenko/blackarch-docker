@@ -16,3 +16,22 @@ As every container : `docker run -it sydpy/blackarch /bin/bash` if you want to g
 
 Read [Docker run reference](https://docs.docker.com/engine/reference/run/) for more documentation about... well... Docker run.
 
+## RUN GUI apps (with a Linux host)
+
+If you need to run a GUI app from BlackArch (like Wireshark or BinaryNinja for example), the easiest way is to link your container to your host's X display. To do so, you can do as follow :
+
+```
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+
+docker run -it \
+	-v $XSOCK:$XSOCK \
+	-v $XAUTH:$XAUTH \
+	-e XAUTHORITY=$XAUTH \
+	-e DISPLAY=$DISPLAY \
+	sydpy/blackarch <CMD>
+```
+
+Here `<CMD>` can either be the GUI app you would like to launch, or a shell from where you will launch the GUI app.
+
