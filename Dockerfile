@@ -2,8 +2,8 @@ FROM	archlinux/base:latest
 
 #ENV		TERM=xterm
 
-ADD		pacman.conf /etc/pacman.conf
-ADD		mirrorlist /etc/pacman.d/mirrorlist
+#ADD		pacman.conf /etc/pacman.conf
+#ADD		mirrorlist /etc/pacman.d/mirrorlist
 
 # Updating repositories
 RUN		/bin/pacman -Syu --noconfirm
