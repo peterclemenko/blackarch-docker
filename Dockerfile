@@ -1,6 +1,6 @@
 FROM	archlinux/base:latest
 
-ENV		TERM=xterm
+#ENV		TERM=xterm
 
 ADD		pacman.conf /etc/pacman.conf
 ADD		mirrorlist /etc/pacman.d/mirrorlist
