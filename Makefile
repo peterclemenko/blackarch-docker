@@ -1,5 +1,5 @@
-# DOCKER_USER:=sydpy
-DOCKER_ORGANIZATION=sydpy
+# DOCKER_USER:=peterclemenko
+DOCKER_ORGANIZATION=peterclemenko
 DOCKER_IMAGE:=blackarch
 
 docker-image:
