@@ -21,6 +21,3 @@ RUN		/bin/chmod +x strap.sh
 
 # Executing strap.sh
 RUN		./strap.sh
-
-# Installing all blackarch packages
-RUN		/bin/pacman -Syy --noconfirm blackarch 
