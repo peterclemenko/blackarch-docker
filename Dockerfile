@@ -1,4 +1,6 @@
-FROM	archlinux/base:latest
+FROM	archlinux/archlinux:base
+
+
 
 ENV		TERM=xterm
 
